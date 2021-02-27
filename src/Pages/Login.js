@@ -7,11 +7,11 @@ const Login = () => {
 
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
+    const [disabled, setDisabled] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        setEmail('')
-        setPass('')
+        setDisabled(true)
     }
 
     return (
@@ -23,18 +23,19 @@ const Login = () => {
                     </Marca>
                     <InputGroup>
                         <form onSubmit={handleSubmit}>
-                            <div className="email">
-                                <Label>Email</Label>
-                                <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
-                            </div>
-                            <div className="pass">
-                                <Label>Senha</Label>
-                                <input type="password" value={pass} onChange={(e)=>setPass(e.target.value)} />
-                            </div>
-                            <div className="send">
+                            <div className="input-group">
+                                <Label>Email<span>*</span>:</Label>
+                                <input type="email" value={email} disabled={disabled} placeholder="seu@email.com" onChange={(e)=>setEmail(e.target.value)} />
+                                
+                                <Label>Senha<span>*</span>:</Label>
+                                <input type="password" value={pass} disabled={disabled} placeholder="*******" onChange={(e)=>setPass(e.target.value)} />
+                                
                                 <button type="submit">Enviar</button>
+                                <div className="flex-links">
+                                    <Link to="/">Esqueci minha senha</Link>
+                                    <Link to="/Signup">Cadastrar</Link>
+                                </div>
                             </div>
-                            <Link to="/">Esqueci minha senha</Link>
                         </form>
                     </InputGroup>
                 </Container>
