@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# CredPago Login system
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project is under development with `React` + `Styled-Components`
+
+To clone this repo -> `git clone` https://github.com/paulohfsantos/credpago.git
 
 ## Available Scripts
 
